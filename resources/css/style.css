@@ -6,8 +6,7 @@ font-family: 'Roboto', sans-serif; */
 
 /* Universal */
 
-html{
- 
+html {
   font-size: 16px;
   box-sizing: border-box;
   margin: 0 auto;
@@ -19,13 +18,16 @@ body {
   border: 1px solid lightgray;
 }
 
-h1, h2, h3, span {
-    
-    font-family: 'Noto Sans KR', sans-serif;
+h1, h2, h3, h4, h5, h6, p, a {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h1, h2, h3, span {  
+  font-family: 'Roboto', sans-serif; 
 }
 
 h1, h2, h3 {
-
   color: rgb(54, 53, 53);
 }
 
@@ -33,7 +35,6 @@ p {
   color: gray;
   font-family: 'Roboto', sans-serif;
 }
-
 
 a {
     text-decoration: none;
@@ -44,6 +45,9 @@ a {
   text-align: center;
 }
 
+.width70 {
+  width: 70%;
+}
 
 /* Header section and nav items */
 
@@ -83,6 +87,7 @@ header {
 span .name-id {
     color: rgb(82, 72, 72);
 }
+
 nav {
     margin-right: 24px;
 }
@@ -95,106 +100,178 @@ nav {
   
 }
 
-/* Banner with leading image and button */
-
-.banner-container {
-    display: flex;
-    flex-direction: row;
-    background-color: rgb(228, 225, 225);
-    align-items: center;
+header .mobile {
+  display: none;
 }
 
-.banner-img {
-  flex-basis: 60%;
+
+
+/* Mobile View - Header */
+
+@media only screen and (max-width: 600px) {
+
+  header .desktop {
+    display: none;
+  }
+
+  header .logo {
+    display: none;
+  }
+
+  header .mobile {
+    display: inline-flex;
+    width:  100%;
+    justify-content: space-around;
+    margin:  0 auto;
+    align-items: center;
+  }
+
+}
+
+/* End of Mobi§le View - Header */
+
+/* Hero Container with leading image and button */
+
+
+.hero-container {
+    display: flex;  
+    background-color: rgb(228, 225, 225);   
+}
+
+.hero-img {
+  max-width: 60%;
   padding: 32px 24px;
 }
 
 
-.banner-img img {
-  width: 100%;
-  
+.hero-img img {
+  max-width: 100%;
 }
 
-.banner-content {
-  flex-basis: 40%;
-  
+.hero-content {
+  max-width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.banner-content h1 {
-    max-width: 80%;
-    font-size: 2.75rem;
-    padding-left: 16px;
+
+.hero-content h1 {
+    font-size: 2.5rem;
+   
+    margin: 16px;
 }
 
-.banner-content p {
-    max-width: 80%;
+.hero-content p {
     font-size: 1.5rem;
-    padding-bottom: 24px;
-    padding-left: 16px;
+    margin: 16px;
+   
 }
 
-.banner-content .banner-button {
-
+.hero-content .button {
     background-color: rgba(0, 0, 0, 0.712);
-    border: 0;
-    border-radius: 5px;
+    border: none;
     color: whitesmoke;
     padding: 16px;
     text-align: center;
-    width: 80%;
-    font-size: 1.25rem;
-    margin-left: 16px;
+    font-size: large;
+    margin: 16px;
+  
+}
+
+@media only screen and (max-width: 768px) {
+
+  .hero-content h1 {
+    font-size: 2rem;
+    width: 90%;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+ 
+}
+
+/* Mobie View - Hero Container */
+
+@media only screen and (max-width: 600px) {
+  .hero-container {
+    display: block;
+    margin: 0 auto;
+  }
+
+ .hero-img {
+   max-width: 100%;
+   padding: 32px 16px;
+ }
+
+ .hero-content {
+   max-width: 100%;
+   padding: 0 16px 32px;
+ }
+
+ .hero-content h1 {
+  margin: 0;
+  padding-bottom: 32px;
+  width: 90%;
+  font-size: 2rem;
+}
+
+.hero-content p {
+  margin: 0;
+  width: 90%;
+  padding-bottom: 24px;
+  font-size: 1.3rem;
+}
+
+.hero-content .button {
+  margin: 0;
+  width: 90%;
+  font-size: 1.1rem;
+  background-color: rgba(116, 113, 113, 0.712)
+}
 
 }
+
+/* End of Mobile View - Hero Container */
 
 /* Main container with 2 columns and flexbox: container-one and container-two */
 
 
 .flex-container {
   display: inline-flex;
-  max-width: 100%;
-  flex-direction: row;
   margin: 0 5px;
- 
-  
 }
-/* Left container inside the flex-container */
+/* Left side div in the Main container */
 
 .container-one {
-  flex-basis: 60%;
-  margin: 32px 24px;
-  
+  max-width: 60%;
+  padding: 32px 24px; 
 }
 
 .container-one img {
-  width: 100%;
-  height: auto;
+  max-width: 100%; 
 }
-
 
 .container-one-content h2{
   margin: 32px 0 24px;
   font-size: 2rem;
-  
 }
 
 .container-one-content .cite {
   margin-top: 32px;
 }
 
-
-/* Right container inside the Flex-container */
+/* Aside divs in the main container - Right Side */
 
 .container-two {
-  flex-basis: 40%;
-  display: flex;
-  flex-direction: column;
+  max-width: 40%;
   padding: 16px 0 32px;
   border-left: 1px solid rgb(228, 227, 227);
   
 }
 
-/* Rows inside the right container */
 
 .info-banner {
   display: flex;
@@ -234,7 +311,81 @@ nav {
   background-color: rgb(240, 240, 240);
 }
 
-/* cards continer with 6 articles/cards flexbox */
+.container-two-mob {
+  display: none;
+}
+
+/* Tablet View - Main Container */
+
+@media only screen and (max-width: 768px) {
+  .container-one h2 {
+    font-size: 1.5rem;
+  }
+
+  .container-two-content {
+    padding-right: 8px;
+  }
+
+  .container-two h3 {
+    font-size: 1.2rem;
+  }
+
+  .container-two p {
+    font-size: 0.9rem;;
+  }
+
+}
+
+/* Mobile View - Main container */
+
+
+@media only screen and (max-width: 600px) {
+
+  .flex-container {
+    margin: 0 auto;
+  }
+
+  .container-one {
+    display: none;
+  }
+
+  .container-two {
+    display: none;
+  }
+
+  .container-two-mob {
+    max-width: 100%;
+    display: block;
+  }
+
+  .info-banner {
+    flex-direction: column;
+   align-items: flex-start;
+   border: none;   
+  }
+  
+  .info-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    padding-bottom: 32px;
+  }
+
+  .container-two-content {
+    flex-basis: 100%;
+    padding: 0 32px 0 16px;    
+  }
+
+  .container-two-content h3{
+    font-size: 1.5rem;
+  }
+
+  .container-two-content p {
+    margin-bottom: 8px;
+  }
+}
+
+/* Cards container with 6 articles/cards flexbox */
 
 .cards-container {
   background-color: rgba(226, 226, 226, 0.849);
@@ -284,7 +435,74 @@ nav {
   margin: 8px 0;
 }
 
-/* Thesis exhibit flexboxes */
+/* Table View - Cards containers - 6 cards */
+
+@media only screen and (max-width: 768px) {
+
+  .cards {
+    padding: 16px;
+  }
+
+  .card-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .card-content p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile View - Cards containers - no images - Only headings */
+
+@media only screen and (max-width: 600px) {
+
+  .cards-container {
+    background-color: white;
+  }
+
+  .cards-title h2 {
+    padding-bottom: 16px;
+  }
+
+  .cards {
+    display: block;
+    max-width: 100%;
+    padding: 16px 16px 32px;  
+  }
+
+
+  .card .nodisplay {
+  display: none;
+}
+
+  .card {
+  background-color: lightgray;
+  min-width: 100%;
+  margin-bottom: 8px;
+}
+
+.card .card-content {
+  padding: 24px;  
+}
+
+  .card-content h3 {
+  font-size: 1.35rem;
+}
+  
+}
+
+/* Thesis Exhibits section with video and side banners */
+
+.flex-container-video {
+  display: inline-flex;
+  margin: 0 5px;
+}
+
+.container-one-video {
+  max-width: 60%;
+  padding: 32px 24px;
+  
+}
 
 .container-four {
   flex-basis: 40%;
@@ -294,8 +512,63 @@ nav {
   
 }
 
+.container-four-content {
+  padding-left: 16px;
+  flex-basis: 65%;
+  padding-right: 24px;
+}
+
+.container-four-content h3 {
+  font-size: 1.75rem;
+  margin-bottom: 8px;
+}
+
+.gray-card {
+  background-color: rgb(240, 240, 240);
+}
+
 .no-border {
   border-style: none;
+}
+
+/* Tablet View - Video section */
+
+@media only screen and (max-width: 768px) {
+
+  .container-one-video h2 {
+    font-size: 1.75;
+  }
+
+  .container-four-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .container-four-content p {
+    font-size: 1rem;
+  }
+
+}
+
+/* Mobile View - Thesis Exhibit Section  */
+
+@media only screen and (max-width: 600px) {
+.flex-container-video {
+  margin: 0;
+}
+
+  .flex-container-video .container-one-content {
+    display: none;
+  }
+
+  .container-four {
+    display: none;
+  }
+
+  .container-one-video {
+    max-width: 100%;
+    padding: 16px 0 24px;
+  }
+
 }
 
 /* Footer */
@@ -312,4 +585,16 @@ footer {
   border-top: 1px solid lightgray;
 }
 
+/* Mobile View- Footer */
 
+@media only screen and (max-width: 600px) {
+  footer {
+    border: none;
+  }
+  .footer-nav {
+    display: none;
+    
+  }
+  }
+
+  
